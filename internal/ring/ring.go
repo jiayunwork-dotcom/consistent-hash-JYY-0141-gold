@@ -59,6 +59,7 @@ func (r *Ring) Add(name string) error {
 		vh := hash.HashVirtual(n, i)
 		r.virtual[vh] = n
 	}
+	r.rebuildKeys()
 	return nil
 }
 

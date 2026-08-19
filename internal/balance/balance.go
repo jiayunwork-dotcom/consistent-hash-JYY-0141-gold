@@ -98,7 +98,6 @@ func PlanAddNode(r *ring.Ring, keys []string, newNode string) (*MigrationPlan, e
 	if err := r.Add(newNode); err != nil {
 		return nil, err
 	}
-	r.Remove(newNode)
 
 	var moves []Move
 	for _, k := range keys {
